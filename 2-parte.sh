@@ -10,6 +10,9 @@ userpw="password"
 ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime 
 hwclock --systohc
 echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
+locale-gen
+echo "LANG=it_IT.UTF-8.UTF-8" >> /etc/locale.conf
+echo "KEYMAP=it" >> /etc/vconsole.conf  
 echo "$localhost" > /etc/hostname
 echo root:$rootpw | chpasswd
 useradd -m $user
