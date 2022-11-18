@@ -29,6 +29,25 @@ echo "$user ALL=(ALL:ALL) ALL" >> /etc/sudoers.d/$user
 echo "%wheel ALL=(ALL:ALL) ALL" >> /etc/sudoers
   
 
+
+#systemd-boot
+bootctl --path=/boot install
+echo "default arch-*" >> /boot/loader/loader.conf
+echo "timeout 3" >> /boot/loader/loader.conf
+echo "title Hey! Select me.. :)
+linux /vmlinuz-linux
+initrd /initramfs-linux.img
+options root=/dev/$p3 rootflags=subvol=@ rw quite loglevel=3 rd.system.show_status=auto rd.udev.log_level=3" > /boot/loader/entries/arch.conf
+echo "title Recovery ISO
+linux /live/vmlinuz-linux
+initrd /live/initramfs-linux.img
+options img_dev=/dev/$p4 img_loop=archlinux.iso copytoram rw" > /boot/loader/entries/live.conf
+
+mkinitcpio -P
+
+
+
+
 pacman -S efibootmgr wpa_supplicant wireless_tools dialog netctl net-tools iw networkmanager 
 pacman -S pacman-contrib git wget jq tk gparted mtools dosfstools alsa-utils pipewire-pulse firewalld cronie bluez bluez-utils reflector  acpi ltp 
 
