@@ -17,6 +17,8 @@ p4="/dev/sda4"
 p5="/dev/sda5"
 
 c="gb,nl"
+editor="vim"
+#editor="nano"
 
 #Formattazione delle partizioni
 #mkfs.fat -F32 $p1
@@ -39,7 +41,7 @@ mount $p4 /mnt/iso
 #mount $p5 /mnt/scripts 
 
 reflector --verbose -c $c -a 6  --sort rate --save /etc/pacman.d/mirrorlist
-pacstrap /mnt base base-devel linux linux-firmware vim 
+pacstrap /mnt base base-devel linux linux-firmware $editor
 genfstab -Up /mnt > /mnt/etc/fstab
 cp 2-parte.sh /mnt/home/
 arch-chroot /mnt 
