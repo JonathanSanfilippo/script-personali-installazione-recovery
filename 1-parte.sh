@@ -20,7 +20,7 @@ mount -o noatime,commit=120,compress=zstd,space_cache=v2,ssd,subvol=@home /dev/s
 mount /dev/sda1 /mnt/boot 
 swapon
 mount /dev/sda4 /mnt/iso 
-mount /dev/sda5 /mnt/scripts 
+#mount /dev/sda5 /mnt/scripts 
 
 reflector --verbose -c gb -a 6  --sort rate --save /etc/pacman.d/mirrorlist
 pacstrap /mnt base base-devel linux linux-firmware vim 
