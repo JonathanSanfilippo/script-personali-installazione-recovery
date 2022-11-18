@@ -1,13 +1,13 @@
 #!/bin/bash
 # author Jonathan Sanfilippo
-# installazione di recovery 
+# installazione di recovery parte seconda chroot
 
 localhost="arch"
 user="jonathan"
 rootpw="password"
 userpw="password"
 
-
+ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime 
 echo "$localhost" > /etc/hostname
 echo root:$rootpw | chpasswd
 useradd -m $user
