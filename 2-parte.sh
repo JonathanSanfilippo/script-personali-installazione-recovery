@@ -9,9 +9,9 @@ userpw="password"
 localegen="en_US.UTF-8 UTF-8"
 localeconf="LANG=en_US.UTF-8.UTF-8"
 km="us"
+localtime="Europe/London"
 
-
-ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime 
+ln -sf /usr/share/zoneinfo/$localtime /etc/localtime 
 hwclock --systohc
 echo "$localegen" > /etc/locale.gen
 locale-gen
