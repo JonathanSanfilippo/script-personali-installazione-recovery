@@ -1,6 +1,7 @@
 #!/bin/bash
 # author Jonathan Sanfilippo
 # installazione di recovery parte seconda chroot
+
 #nvme
 #p1="/dev/nvme0n1p1"
 #p2="/dev/nvme0n1p2"
@@ -50,11 +51,11 @@ echo "timeout 3" >> /boot/loader/loader.conf
 echo "title Hey! Select me.. :)
 linux /vmlinuz-linux
 initrd /initramfs-linux.img
-options root=/dev/$p3 rootflags=subvol=@ rw quite loglevel=3 rd.system.show_status=auto rd.udev.log_level=3" > /boot/loader/entries/arch.conf
+options root=/dev/'$p3' rootflags=subvol=@ rw quite loglevel=3 rd.system.show_status=auto rd.udev.log_level=3" > /boot/loader/entries/arch.conf
 echo "title Recovery ISO
 linux /live/vmlinuz-linux
 initrd /live/initramfs-linux.img
-options img_dev=/dev/$p4 img_loop=archlinux.iso copytoram rw" > /boot/loader/entries/live.conf
+options img_dev=/dev/'$p4' img_loop=archlinux.iso copytoram rw" > /boot/loader/entries/live.conf
 
 mkinitcpio -P
 
