@@ -32,7 +32,7 @@ systemctl enable cronie
 systemctl enable reflector.timer
 
 
-
+rm -r /home/2-parte.sh
 
 
 
