@@ -9,6 +9,7 @@ userpw="password"
 
 ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime 
 hwclock --systohc
+echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
 echo "$localhost" > /etc/hostname
 echo root:$rootpw | chpasswd
 useradd -m $user
