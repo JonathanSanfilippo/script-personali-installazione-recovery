@@ -8,6 +8,7 @@ rootpw="password"
 userpw="password"
 
 ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime 
+hwclock --systohc
 echo "$localhost" > /etc/hostname
 echo root:$rootpw | chpasswd
 useradd -m $user
