@@ -10,11 +10,11 @@ userpw="password"
 
 echo "$localhost" > /etc/hostname
 echo root:$rootpw | chpasswd
-useradd -m jonathan
-echo jonathan:$userpw | chpasswd
-usermod -aG wheel jonathan
-usermod -aG video jonathan
-echo "jonathan ALL=(ALL:ALL) ALL" >> /etc/sudoers.d/jonathan
+useradd -m $user
+echo $user:$userpw | chpasswd
+usermod -aG wheel $user
+usermod -aG video $user
+echo "$user ALL=(ALL:ALL) ALL" >> /etc/sudoers.d/$user
 echo "%wheel ALL=(ALL:ALL) ALL" >> /etc/sudoers
   
 
