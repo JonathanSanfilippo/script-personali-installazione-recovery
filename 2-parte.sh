@@ -1,6 +1,19 @@
 #!/bin/bash
 # author Jonathan Sanfilippo
 # installazione di recovery parte seconda chroot
+#nvme
+#p1="/dev/nvme0n1p1"
+#p2="/dev/nvme0n1p2"
+#p3="/dev/nvme0n1p3"
+#p4="/dev/nvme0n1p4"
+#p5="/dev/nvme0n1p5"
+
+#ssd
+p1="/dev/sda1"
+p2="/dev/sda2"
+p3="/dev/sda3"
+p4="/dev/sda4"
+p5="/dev/sda5"
 
 localhost="arch"
 user="jonathan"
