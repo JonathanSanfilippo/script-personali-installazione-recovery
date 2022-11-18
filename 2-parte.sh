@@ -6,17 +6,17 @@ localhost="arch"
 user="jonathan"
 rootpw="password"
 userpw="password"
-
-
-
+localegen="en_US.UTF-8 UTF-8"
+localeconf="LANG=en_US.UTF-8.UTF-8"
+km="us"
 
 
 ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime 
 hwclock --systohc
-echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
+echo "$localegen" > /etc/locale.gen
 locale-gen
-echo "LANG=en_US.UTF-8.UTF-8" >> /etc/locale.conf
-echo "KEYMAP=us" >> /etc/vconsole.conf  
+echo "$localeconf" >> /etc/locale.conf
+echo "KEYMAP=$km" >> /etc/vconsole.conf  
 echo "$localhost" > /etc/hostname
 echo root:$rootpw | chpasswd
 useradd -m $user
