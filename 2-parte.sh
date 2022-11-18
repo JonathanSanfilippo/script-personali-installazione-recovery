@@ -2,10 +2,16 @@
 # author Jonathan Sanfilippo
 # installazione di recovery 
 
-echo "arch" > /etc/hostname
-echo root:nonlaso | chpasswd
+localhost="arch"
+user="jonathan"
+rootpw="password"
+userpw="password"
+
+
+echo "$localhost" > /etc/hostname
+echo root:$rootpw | chpasswd
 useradd -m jonathan
-echo jonathan:nonlaso | chpasswd
+echo jonathan:$userpw | chpasswd
 usermod -aG wheel jonathan
 usermod -aG video jonathan
 echo "jonathan ALL=(ALL:ALL) ALL" >> /etc/sudoers.d/jonathan
