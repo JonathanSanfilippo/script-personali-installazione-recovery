@@ -48,7 +48,7 @@ echo "%wheel ALL=(ALL:ALL) ALL" >> /etc/sudoers
 bootctl --path=/boot install
 echo "default arch-*" >> /boot/loader/loader.conf
 echo "timeout 3" >> /boot/loader/loader.conf
-echo "title Hey! Select me.. :)
+echo "title Arch Linux
 linux /vmlinuz-linux
 initrd /initramfs-linux.img
 options root=/dev/'$p3' rootflags=subvol=@ rw quite loglevel=3 rd.system.show_status=auto rd.udev.log_level=3" > /boot/loader/entries/arch.conf
