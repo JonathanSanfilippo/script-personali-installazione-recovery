@@ -18,6 +18,8 @@ locale-gen
 echo "$localeconf" >> /etc/locale.conf
 echo "KEYMAP=$km" >> /etc/vconsole.conf  
 echo "$localhost" > /etc/hostname
+echo "127.0.0.1 localhost" >> /etc/hosts 
+echo "::1       localhost" >> /etc/hosts
 echo root:$rootpw | chpasswd
 useradd -m $user
 echo $user:$userpw | chpasswd
